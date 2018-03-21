@@ -77,6 +77,8 @@ type ClientContext interface {
 
 	// Servers's address
 	LocalAddr() net.Addr
+
+	IsAscii() bool
 }
 
 // FileStream is a read or write closeable stream

@@ -113,9 +113,11 @@ func (c *clientHandler) handleFEAT() {
 func (c *clientHandler) handleTYPE() {
 	switch c.param {
 	case "I":
+		c.isAscii = false
 		c.writeMessage(200, "Type set to binary")
 	case "A":
-		c.writeMessage(200, "WARNING: ASCII isn't correctly supported")
+		c.isAscii = true
+		c.writeMessage(200, "Type set to ascii")
 	default:
 		c.writeMessage(500, "Not understood")
 	}

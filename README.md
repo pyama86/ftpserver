@@ -1,8 +1,8 @@
 # Golang FTP Server library
 
-[![Build status](https://travis-ci.org/fclairamb/ftpserver.svg?branch=master)](https://travis-ci.org/fclairamb/ftpserver)
-[![Go Report Card](https://goreportcard.com/badge/fclairamb/ftpserver)](https://goreportcard.com/report/fclairamb/ftpserver)
-[![GoDoc](https://godoc.org/github.com/fclairamb/ftpserver?status.svg)](https://godoc.org/github.com/fclairamb/ftpserver/server)
+[![Build status](https://travis-ci.org/pyama86/ftpserver.svg?branch=master)](https://travis-ci.org/pyama86/ftpserver)
+[![Go Report Card](https://goreportcard.com/badge/pyama86/ftpserver)](https://goreportcard.com/report/pyama86/ftpserver)
+[![GoDoc](https://godoc.org/github.com/pyama86/ftpserver?status.svg)](https://godoc.org/github.com/pyama86/ftpserver/server)
 [![Gitter](https://badges.gitter.im/ftpserver.svg)](https://gitter.im/ftpserver/Lobby)
 
 The goal is to provide a simple & comprehensive FTP Server library.
@@ -42,11 +42,11 @@ container (less than 15MB image, based on alpine):
 mkdir data
 
 # Starting the sample FTP server
-docker run --rm -d -p 2121-2200:2121-2200 -v $(pwd)/data:/data fclairamb/ftpserver
+docker run --rm -d -p 2121-2200:2121-2200 -v $(pwd)/data:/data pyama86/ftpserver
 
 # Connecting to it and uploading a file
 ftp ftp://test:test@localhost:2121
-!wget -c -O ftpserver-v0.3 https://github.com/fclairamb/ftpserver/releases/download/v0.3/ftpserver
+!wget -c -O ftpserver-v0.3 https://github.com/pyama86/ftpserver/releases/download/v0.3/ftpserver
 put ftpserver-v0.3 ftpserver-v0.3
 quit
 ls -lh data/ftpserver-v0.3
@@ -140,14 +140,14 @@ type Settings struct {
 
 ### Sample implementation
 
-Have a look at the [sample driver](https://github.com/fclairamb/ftpserver/tree/master/sample). It shows how you can plug your FTP server to something else, in this case your file system.
+Have a look at the [sample driver](https://github.com/pyama86/ftpserver/tree/master/sample). It shows how you can plug your FTP server to something else, in this case your file system.
 
 ## Sample run
 ```
 $ ftp ftp://a:a@localhost:2121
 Trying ::1...
 Connected to localhost.
-220 Welcome on https://github.com/fclairamb/ftpserver
+220 Welcome on https://github.com/pyama86/ftpserver
 331 OK
 230 Password ok, continue
 Remote system type is UNIX.

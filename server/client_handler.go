@@ -31,6 +31,7 @@ type clientHandler struct {
 	transfer    transferHandler      // Transfer connection (only passive is implemented at this stage)
 	transferTLS bool                 // Use TLS for transfer connection
 	logger      log.Logger           // Client handler logging
+	isAscii     bool
 }
 
 // newClientHandler initializes a client handler when someone connects
@@ -224,6 +225,10 @@ func (c *clientHandler) TransferClose() {
 			level.Debug(c.logger).Log(logKeyMsg, "FTP Transfer connection closed", logKeyAction, "ftp.transfer_close")
 		}
 	}
+}
+
+func (c *clientHandler) IsAscii() bool {
+	return c.isAscii
 }
 
 func parseLine(line string) (string, string) {
